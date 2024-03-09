@@ -1,3 +1,3 @@
-module github.com/radugrecu/go-cli-test
+module main
 
 go 1.22.0
