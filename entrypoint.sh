@@ -16,7 +16,8 @@ function get_release_assets {
     --header "Accept: application/vnd.github+json"
   )
   [ -n "${INPUT_GITHUB_TOKEN}" ] && args+=(--header "Authorization: Bearer ${INPUT_GITHUB_TOKEN}")
-  curl "${args[@]}" "https://api.github.com/repos/$repo/releases${version}" | jq '.assets[] | { name: .name, download_url: .browser_download_url }'
+  curl "${args[@]}" "https://api.github.com/repos/$repo/releases${version}" |
+    jq '.assets[] | { name: .name, download_url: .browser_download_url }'
 }
 
 function install_release {
@@ -33,5 +34,5 @@ function install_release {
   install "${binary}" "/usr/local/bin/${3}"
 }
 
-install_release radugrecu/go-cli-test "${COMMENTER_VERSION}" commenter checksums.txt
+install_release radugrecu/go-cli-test latest go-cli-test checksums.txt
 go-cli-test ${INPUT_REPORT_FILE}
