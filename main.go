@@ -12,6 +12,8 @@ import (
 
 func main() {
 
+	println("starting go-cli-test")
+
 	args := os.Args[1:]
 
 	reportPath := "trivy_sample_report.json"

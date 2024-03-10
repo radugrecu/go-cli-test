@@ -35,4 +35,6 @@ function install_release {
 }
 
 install_release radugrecu/go-cli-test "/latest" go-cli-test checksums.txt
+
+ls -l /usr/local/bin/
 go-cli-test ${INPUT_REPORT_FILE}
