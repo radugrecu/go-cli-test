@@ -1,6 +1,7 @@
 #!/bin/sh -l
 
-echo "using file ${INPUT_REPORT_FILE}"
+if [ -z "${INPUT_GITHUB_TOKEN}" ] ; then
+  echo "Consider setting a GITHUB_TOKEN to prevent GitHub api rate limits." >&2
+fi
 
-# time=$(date)
-# echo "time=$time" >> $GITHUB_OUTPUT
+ls -la
