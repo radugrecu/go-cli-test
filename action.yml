@@ -2,19 +2,13 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  report_file:
+    description: 'Trivy Report file'
     required: true
-    default: 'World'
-  another_input:
-    description: 'Another input'
-    required: true
-    default: 'Another input'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: 'trivy.json'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+  # args:
+  #   - ${{ inputs.who-to-greet }}
