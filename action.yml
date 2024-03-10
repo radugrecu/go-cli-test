@@ -2,6 +2,9 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
+  github_token:
+    description: 'GITHUB_TOKEN'
+    required: true
   report_file:
     description: 'Trivy Report file'
     required: true
