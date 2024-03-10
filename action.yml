@@ -8,7 +8,7 @@ inputs:
     default: 'World'
   another_input:
     description: 'Another input'
-    required: false
+    required: true
     default: 'Another input'
 outputs:
   time: # id of output
