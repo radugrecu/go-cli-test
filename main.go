@@ -12,7 +12,9 @@ import (
 
 func main() {
 
-	println("starting go-cli-test")
+	println("1 starting go-cli-test")
+	fmt.Println("2 starting go-cli-test")
+	log.Println("3 starting go-cli-test")
 
 	args := os.Args[1:]
 
