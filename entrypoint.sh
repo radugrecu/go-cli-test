@@ -7,3 +7,5 @@ echo "time=$time" >> $GITHUB_OUTPUT
 
 echo "who-to-greet: ${INPUT_who-to-greet}"
 echo "another_input: ${INPUT_another_input}"
+
+printenv | grep INPUT
