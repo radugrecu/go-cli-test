@@ -28,6 +28,7 @@ func main() {
 }
 
 func loadTrivyReport(reportPath string) trivyTypes.Report {
+	fmt.Println("Loading trivy report from " + reportPath)
 
 	file, err := os.Open(reportPath)
 	if err != nil {
@@ -41,6 +42,8 @@ func loadTrivyReport(reportPath string) trivyTypes.Report {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Println("Trivy report loaded successfully")
 
 	return report
 }
