@@ -83,6 +83,7 @@ func main() {
 
 		for _, misconfiguration := range result.Misconfigurations {
 			filename := workingDir + strings.ReplaceAll(result.Target, workspacePath, "")
+			filename = strings.TrimPrefix(filename, "./")
 			comment := generateErrorMessage(misconfiguration)
 			fmt.Printf("Preparing comment for violation of rule %v in %v\n", misconfiguration.ID, filename)
 			err := c.WriteMultiLineComment(filename, comment, misconfiguration.CauseMetadata.StartLine, misconfiguration.CauseMetadata.EndLine)
