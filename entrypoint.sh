@@ -34,7 +34,7 @@ function install_release {
   install "${binary}" "/usr/local/bin/${3}"
 }
 
-install_release radugrecu/go-cli-test "/latest" go-cli-test checksums.txt
+install_release radugrecu/trivy-terraform-pr-commenter "/latest" trivy-terraform-pr-commenter checksums.txt
 
 ls -l /usr/local/bin/
-go-cli-test ${INPUT_REPORT_FILE}
+trivy-terraform-pr-commenter ${INPUT_REPORT_FILE}

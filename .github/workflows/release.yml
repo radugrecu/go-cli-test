@@ -1,4 +1,4 @@
-name: go-git-pr-commenter release
+name: trivy-terraform-pr-commenter release
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    name: releasing go-git-pr-commenter
+    name: releasing trivy-terraform-pr-commenter
     runs-on: ubuntu-latest
 
     steps:

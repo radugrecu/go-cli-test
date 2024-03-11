@@ -1,6 +1,6 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'trivy-terraform-pr-commenter'
+description: 'add PR comments for trivy terraform scan results'
 inputs:
   github_token:
     description: 'GITHUB_TOKEN'
@@ -22,5 +22,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  # args:
-  #   - ${{ inputs.who-to-greet }}
