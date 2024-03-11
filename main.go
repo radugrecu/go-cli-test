@@ -77,7 +77,7 @@ func main() {
 		}
 		// skip if no misconfigurations
 		if len(result.Misconfigurations) == 0 {
-			fmt.Printf("%s / %s / %s - no misconfigurations; skipping", result.Target, result.Type, result.Class)
+			fmt.Printf("%s / %s / %s - no misconfigurations; skipping\n", result.Target, result.Type, result.Class)
 			continue
 		}
 
@@ -87,6 +87,7 @@ func main() {
 			fmt.Printf("Preparing comment for violation of rule %v in %v\n", misconfiguration.ID, filename)
 			err := c.WriteMultiLineComment(filename, comment, misconfiguration.CauseMetadata.StartLine, misconfiguration.CauseMetadata.EndLine)
 			if err != nil {
+				fmt.Println("Ran into some kind of error", err.Error())
 				switch err.(type) {
 				case commenter.CommentAlreadyWrittenError:
 					fmt.Println("Ignoring - comment already written")
