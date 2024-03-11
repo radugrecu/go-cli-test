@@ -9,6 +9,15 @@ inputs:
     description: 'Trivy Report file'
     required: true
     default: 'trivy.json'
+  working_directory:
+    required: false
+    description: |
+      Directory to run the action on, from the repo root.
+      Default is . (root of the repository)
+    default: "."
+  soft_fail_commenter:
+    required: false
+    description: If set to `true` will silently comment without breaking the build
 
 runs:
   using: 'docker'
