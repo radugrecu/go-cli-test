@@ -15,6 +15,7 @@ import (
 
 func main() {
 	fmt.Println("Starting the github commenter")
+	// whatever
 
 	token := os.Getenv("INPUT_GITHUB_TOKEN")
 	if len(token) == 0 {
