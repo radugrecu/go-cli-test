@@ -88,20 +88,21 @@ func main() {
 			fmt.Printf("Preparing comment for violation of rule %v in %v (lines %v to %v)\n", misconfiguration.ID, filename, misconfiguration.CauseMetadata.StartLine, misconfiguration.CauseMetadata.EndLine)
 			err := c.WriteMultiLineComment(filename, comment, misconfiguration.CauseMetadata.StartLine, misconfiguration.CauseMetadata.EndLine)
 			if err != nil {
-				fmt.Println("Ran into some kind of error", err.Error())
+				fmt.Println("  Ran into some kind of error")
+				fmt.Println("    " + err.Error())
 				switch err.(type) {
 				case commenter.CommentAlreadyWrittenError:
-					fmt.Println("Ignoring - comment already written")
+					fmt.Println("  Ignoring - comment already written")
 					validCommentWritten = true
 				case commenter.CommentNotValidError:
-					fmt.Println("Ignoring - change not part of the current PR")
+					fmt.Println("  Ignoring - change not part of the current PR")
 					continue
 				default:
 					errMessages = append(errMessages, err.Error())
 				}
 			} else {
 				validCommentWritten = true
-				fmt.Printf("Comment written for violation of rule %v in %v\n", misconfiguration.ID, filename)
+				fmt.Printf("  Comment written for violation of rule %v in %v\n", misconfiguration.ID, filename)
 			}
 		}
 	}
